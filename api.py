@@ -13,8 +13,7 @@ def create_task():
     new_task = Task(id=task_id, title=data.get("title"), desc=data.get("desc"))
     task_id += 1
     tasks.append(new_task)
-    print(new_task.to_dict())
-    return jsonify(new_task.to_dict())
+    return jsonify({"message":"Nova tarefa criada com sucesso", "id": new_task.id})
 
 @app.route('/tasks', methods=['GET'])
 def read_tasks():
